@@ -1,0 +1,28 @@
+{
+  "name": "Close App-launcher Tabs",
+  "description": "Close those pesky tabs after they launch apps. Specify urls to match against, and how quickly to close those tabs after they launch. Easy!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "close-app-launcher-tabs-16.png",
+      "32": "close-app-launcher-tabs-32.png",
+      "48": "close-app-launcher-tabs-48.png",
+      "128": "close-app-launcher-tabs-128.png"
+    }
+  },
+  "icons": {
+    "16": "close-app-launcher-tabs-16.png",
+    "32": "close-app-launcher-tabs-32.png",
+    "48": "close-app-launcher-tabs-48.png",
+    "128": "close-app-launcher-tabs-128.png"
+  }
+}

@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Close App-launcher Tabs</title>
+    <style>
+      body {
+        width: 600px;
+      }
+      section {
+        margin-bottom: 1em;
+      }
+      label {
+        display: block;
+      }
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Close App-launcher Tabs</h2>
+
+    <section>
+      <label><b>URLs</b> to auto-close <br />(line-separated)</label>
+      <textarea id="urls" rows="6" autofocus></textarea>
+    </section>
+
+    <section>
+      <label><b>Delay</b> (seconds) from time of tab open to auto-close</label>
+      <input id="delay" type="number" />
+    </section>
+
+    <section>
+      <label>History</label>
+      <textarea id="history" rows="6" disabled></textarea>
+    </section>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
