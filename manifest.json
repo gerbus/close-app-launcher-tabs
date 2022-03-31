@@ -1,7 +1,7 @@
 {
-  "name": "Close App-launcher Tabs",
-  "description": "Close those pesky tabs after they launch apps. Specify urls to match against, and how quickly to close those tabs after they launch.",
-  "version": "1.0.1",
+  "name": "Auto-Close Tabs by URL",
+  "description": "Automatically close tabs that just launch apps and are otherwise useless. Specify urls to match against, and how quickly to close matching tabs after they are opened.",
+  "version": "1.0.2",
   "manifest_version": 3,
   "permissions": [
     "tabs",
