@@ -33,12 +33,14 @@ const handleTabUpdated = (tabId, changeInfo, tab) => {
                     chrome.storage.sync.get("closeDelayInSeconds", data => {
                         // console.log(data.closeDelayInSeconds)
                         setTimeout(() => {
-                            chrome.storage.sync.get("history", data => {
-                                const now = new Date()
-                                const history = now.toLocaleTimeString() + "  auto-closed " + changeInfo.url + "\n" + data.history
-                                chrome.storage.sync.set({ history })
-                            })
-                            chrome.tabs.remove(tabId)
+                            try {
+                                chrome.tabs.remove(tabId)
+                                chrome.storage.sync.get("history", data => {
+                                    const now = new Date()
+                                    const history = now.toLocaleTimeString() + "  auto-closed " + changeInfo.url + "\n" + data.history
+                                    chrome.storage.sync.set({ history })
+                                })
+                            } catch {}
                         }, data.closeDelayInSeconds * 1000)
                     })
                 }
