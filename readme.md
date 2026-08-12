@@ -1,4 +1,4 @@
-# Close App-launcher Tabs (Chrome Extension)
+# Auto-Close Tabs by URL (Chrome Extension)
 
 When a new tab opens, this extension compares that tab's URL to your custom list of URLs or URL parts. If there's a match, this extension will automatically close that tab after a small custom delay (default: 5 seconds).
 
