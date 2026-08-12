@@ -1,9 +1,10 @@
 {
   "name": "Auto-Close Tabs by URL",
   "description": "Automatically close tabs that just launch apps and are otherwise useless. Specify urls to match against, and how quickly to close matching tabs after they are opened.",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "manifest_version": 3,
   "permissions": [
+    "alarms",
     "tabs",
     "storage"
   ],

@@ -4,6 +4,7 @@
     <style>
       body {
         width: 600px;
+        font: 13px/1.4 system-ui, sans-serif;
       }
       section {
         margin-bottom: 1em;
@@ -13,6 +14,54 @@
       }
       textarea {
         width: 100%;
+      }
+      .log-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+      }
+      #log {
+        max-height: 220px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fafafa;
+      }
+      .entry {
+        display: grid;
+        grid-template-columns: 88px 62px 1fr;
+        gap: 8px;
+        padding: 4px 6px;
+        border-bottom: 1px solid #eee;
+      }
+      .entry:last-child {
+        border-bottom: none;
+      }
+      .entry time {
+        color: #777;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      .entry .level {
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        padding-top: 2px;
+      }
+      .entry .detail {
+        color: #777;
+        word-break: break-all;
+      }
+      .level-closed { color: #1a7f37; }
+      .level-match { color: #8250df; }
+      .level-error { color: #cf222e; }
+      .level-config { color: #0969da; }
+      .level-info { color: #777; }
+      .entry.legacy { opacity: 0.65; }
+      .empty {
+        padding: 8px 6px;
+        color: #777;
       }
     </style>
   </head>
@@ -26,12 +75,15 @@
 
     <section>
       <label><b>Delay</b> (seconds) from time of tab open to auto-close</label>
-      <input id="delay" type="number" />
+      <input id="delay" type="number" min="0" />
     </section>
 
     <section>
-      <label>History</label>
-      <textarea id="history" rows="6" disabled></textarea>
+      <div class="log-header">
+        <label>Activity</label>
+        <button id="clear-log" type="button">Clear</button>
+      </div>
+      <div id="log"></div>
     </section>
 
     <script src="popup.js"></script>
